@@ -27,11 +27,12 @@ export default function Login() {
 
   return (
     <div className='flex justify-center items-center h-[88vh]'>
-      <form onSubmit={handleSubmit} className='flex flex-col items-center gap-5 border p-5 rounded-sm w-[350px] bg-white'>
+      <div className='bg-gradient-to-r from-blue-500 to-indigo-600 w-[400px] h-[405px]'></div>
+      <form onSubmit={handleSubmit} className='flex flex-col items-center gap-5 border p-5 rounded-sm w-[450px] bg-white'>
         <h1 className='text-3xl font-bold text-zinc-600'>LOGIN</h1>
         <div className='w-[150px] h-[150px] bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-md'></div>
-        <input onChange={handleChange} type="text" name='email' value={inputValue.email} className='border outline-none hover:outline-indigo-200 w-full px-2 py-1 rounded' />
-        <input onChange={handleChange} type="password" name='password' value={inputValue.password} className='border outline-none hover:outline-indigo-200 w-full px-2 py-1 rounded' />
+        <input onChange={handleChange} type="text" name='email' value={inputValue.email} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
+        <input onChange={handleChange} type="password" name='password' value={inputValue.password} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
         <input type="submit" value={"submit"} className='bg-black text-white py-1 px-14 rounded'/>
       </form>
     </div>
