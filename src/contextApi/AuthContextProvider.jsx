@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-
+import toast from 'react-hot-toast';
 export const AuthContext = createContext()
 
 export default function AuthContextProvider({ children }) {
@@ -10,6 +10,9 @@ export default function AuthContextProvider({ children }) {
         if (email === "admin@gmail.com" && password === "123") {
             setIsAuth(true)
             localStorage.setItem("isAuth", JSON.stringify(true))
+            toast.success('Login Successfull!')
+        }else{
+            toast.error('Wrong credential😱')
         }
     }
     const handleLogout = () => {

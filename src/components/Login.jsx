@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../contextApi/AuthContextProvider';
-import {Navigate} from "react-router-dom"
+import { Navigate } from "react-router-dom"
 
 export default function Login() {
   const [inputValue, setInputValue] = useState({ email: "", password: "" });
-  const { handleLogin, handleLogout, isAuth } = useContext(AuthContext);
+  const { handleLogin, isAuth } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,8 +21,8 @@ export default function Login() {
     handleLogin(inputValue)
   }
 
-  if(isAuth){
-    return <Navigate to="/"/>
+  if (isAuth) {
+    return <Navigate to="/" />
   }
 
   return (
@@ -33,7 +33,7 @@ export default function Login() {
         <div className='w-[150px] h-[150px] bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-md'></div>
         <input onChange={handleChange} type="text" name='email' value={inputValue.email} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
         <input onChange={handleChange} type="password" name='password' value={inputValue.password} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
-        <input type="submit" value={"submit"} className='bg-black text-white py-1 px-14 rounded'/>
+        <input type="submit" value={"submit"} className='bg-black text-white py-1 px-14 rounded' />
       </form>
     </div>
   )
