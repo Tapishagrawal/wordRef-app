@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../contextApi/AuthContextProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Signup() {
     const [inputValue, setInputValue] = useState({ email: "", password: "" });
     const { handleSignup } = useContext(AuthContext);
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -18,7 +19,7 @@ export default function Signup() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        handleSignup(inputValue)
+        handleSignup(inputValue, navigate)
     }
     return (
         <div className='flex justify-center items-center h-[88vh]'>
@@ -28,8 +29,8 @@ export default function Signup() {
                     <h1 className='text-6xl text-indigo-700'>Hello,</h1>
                     <h2 className='text-6xl font-bold text-indigo-800'>Welcome!</h2>
                 </div>
-                <input onChange={handleChange} placeholder='Email' type="text" name='email' value={inputValue.email} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
-                <input onChange={handleChange} placeholder='Password' type="password" name='password' value={inputValue.password} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
+                <input onChange={handleChange} placeholder='Email' required type="email" name='email' value={inputValue.email} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
+                <input onChange={handleChange} placeholder='Password' required type="password" name='password' value={inputValue.password} className='border outline-none hover:outline-indigo-200 w-[80%] px-2 py-1 rounded text-zinc-600 font-semibold' />
                 <input type="submit" value={"submit"} className='bg-black text-white py-1 px-14 rounded' />
                 <p className='text-sm text-zinc-600 font-medium'>Already have an account? <Link to="/login" className='text-blue-500 font-medium hover:underline'>Login</Link></p>
             </form>
