@@ -12,7 +12,7 @@ export default function Home() {
     })
   }
   const detailAlrt = () =>{
-    toast('Hello Brightness!',
+    toast('Your card Detail is Live!',
   {
     icon: '👏',
     style: {
