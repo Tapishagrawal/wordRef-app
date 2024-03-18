@@ -47,7 +47,6 @@ export default function Home() {
   }
   return (
     <div className='flex justify-center items-center h-[96vh]'>
-      <Toaster />
       <div className='flex gap-4 flex-wrap justify-around mt-[350px] w-[95%]'>
         {
           new Array(10).fill(0).map(() => (
