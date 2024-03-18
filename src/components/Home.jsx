@@ -5,7 +5,7 @@ import { AuthContext } from '../contextApi/AuthContextProvider';
 export default function Home() {
   const { isAuth } = useContext(AuthContext);
 
-  const dealAlrt = () => {
+  const dealAlrt = (navigate) => {
     if (isAuth) {
       toast.success('Deal Added Successfully!', {
         style: {
@@ -22,9 +22,10 @@ export default function Home() {
           color: '#fff',
         },
       })
+      return navigate("/login")
     }
   }
-  const detailAlrt = () => {
+  const detailAlrt = (navigate) => {
     if (isAuth) {
       toast('Your card Detail is Live!',
         {
@@ -43,6 +44,7 @@ export default function Home() {
           color: '#fff',
         },
       })
+      return navigate("/login")
     }
   }
   return (

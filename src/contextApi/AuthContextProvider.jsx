@@ -22,9 +22,10 @@ export default function AuthContextProvider({ children }) {
             toast.error('Wrong email address😱')
         }
     }
-    const handleLogout = () => {
+    const handleLogout = (navigate) => {
         setIsAuth(false)
         localStorage.setItem("isAuth", JSON.stringify(false))
+        return navigate("/login")
     }
     const handleSignup = (userCredential, navigate) => {
         let newLocalData = localUserData
