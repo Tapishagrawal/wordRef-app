@@ -8,9 +8,7 @@ export default function AllRoutes() {
   return (
     <Routes>
       <Route path='/' element={
-        <PrivateRoute>
-          <Home />
-        </PrivateRoute>
+        <Home />
       } />
       <Route path='/login' element={<Login />} />
       <Route path='/signup' element={<Signup />} />
