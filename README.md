@@ -34,3 +34,33 @@ This command will start the development server and you should be able to access 
 - User Authentication
 - User Registration
 - Access to Cards only after Authentication
+
+## Flow of Using the App:
+### Initial Landing:
+
+- Users are welcomed to the app's landing page, where they encounter an array of enticing   cards, each presenting a unique deal or product.
+
+### Authentication Check:
+
+- Upon arrival, the app verifies the user's authentication status.
+- If unauthenticated, users find "Add to Deal" and "Check Details" buttons inactive, accompanied by an alert urging them to authenticate.
+
+### Login/Register:
+
+- Users opt to login or register by clicking the respective link/button.
+- They're swiftly redirected to the login page.
+- If a user already has an account, they can log in. If not, the user needs to register themselves.
+- Input fields for username and password await their entry.
+- After submission, the system initiates the authentication process.
+
+### Home Page with Authenticated Access:
+
+- Authenticated users return to the home page, now greeted with enabled "Add to Deal" and "Check Details" buttons.
+- "Add to Deal" allows users to save the deal or product to their account or cart.
+- "Check Details" grants access to comprehensive information about the selected deal or product.
+
+### Logout:
+
+- Should users wish to log out, they simply initiate the process.
+- Authentication status is promptly revoked.
+- Subsequent redirection directs users back to the login page.
